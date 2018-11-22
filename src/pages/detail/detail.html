@@ -1,0 +1,78 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      {{shipdetaildata.name}}
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div id='kihon'>
+    <h1>基本情報</h1>
+    <div id='box1'>
+      <p>艦名</p>
+      <p>{{shipdetaildata.name}}</p>
+      <p>HP</p>
+      <p>{{shipdetaildata.HP}}</p>
+      <p>最大速度</p>
+      <p>{{shipdetaildata.speed}} knot</p>
+      <p>転舵所要時間</p>
+      <p>{{shipdetaildata.turnTime}} s</p>
+    </div>
+  </div>
+
+  <div id='sentai'>
+    <h1>船体</h1>
+    <div id='box2'>
+
+    </div>
+  </div>
+
+  <div id='heisou'>
+    <h1>主兵装</h1>
+    <div id='box3'>
+
+    </div>
+  </div>
+
+  <div id='subheisou'>
+    <h1>副兵装</h1>
+    <div id='box4'>
+
+    </div>
+  </div>
+
+  <ion-list>
+    <ion-item>艦名：{{shipdetaildata.name}}</ion-item>
+    <ion-item>艦種：{{shipdetaildata.type}}</ion-item>
+    <ion-item>Tier：{{shipdetaildata.tier}}</ion-item>
+    <ion-item>HP：{{shipdetaildata.HP}}</ion-item>
+    <ion-item>主砲口径：{{shipdetaildata.mainCaliber}} mm</ion-item>
+    <ion-item>主砲射程：{{shipdetaildata.mainRange}} km</ion-item>
+    <ion-item>主砲装填速度：{{shipdetaildata.mainLoadingTime}} s</ion-item>
+    <ion-item>180度主砲旋回時間：{{shipdetaildata.mainCycleTime}} s</ion-item>
+    <ion-item>主砲火災発生率：{{shipdetaildata.mainGunFireRate}} %</ion-item>
+    <ion-item>魚雷射程：{{shipdetaildata.torpRange}} km</ion-item>
+    <ion-item>魚雷装填速度：{{shipdetaildata.torpLoadingTime}} s</ion-item>
+    <ion-item>雷速：{{shipdetaildata.torpSpeed}} knot</ion-item>
+    <ion-item>副砲射程：{{shipdetaildata.subRange}} km</ion-item>
+    <ion-item>副砲装填時間：{{shipdetaildata.subLoadingTime}} s</ion-item>
+    <ion-item>副砲火災発生率：{{shipdetaildata.subGunFireRate}} %</ion-item>
+    <ion-item>対空砲射程：{{shipdetaildata.AARange}} km</ion-item>
+    <ion-item>対空砲秒間平均ダメージ：{{shipdetaildata.AADamage}}</ion-item>
+    <ion-item>最大速度：{{shipdetaildata.speed}} knot</ion-item>
+    <ion-item>転舵所要時間：{{shipdetaildata.turnTime}} s</ion-item>
+    <ion-item>海面発見距離：{{shipdetaildata.seaHiding}} km</ion-item>
+    <ion-item>航空発見距離：{{shipdetaildata.airHiding}} km</ion-item>
+  </ion-list>
+
+</ion-content>

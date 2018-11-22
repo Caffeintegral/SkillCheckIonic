@@ -5,13 +5,40 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-list>
+
+
+    <ion-item>
+      <ion-label>国籍</ion-label>
+      <ion-select [(ngModel)]="country" okText="Okay" cancelText="Dismiss" interface="popover" (ionChange)="setType($event)">
+        <ion-option value="jp">日本</ion-option>
+        <ion-option value="us">アメリカ</ion-option>
+        <ion-option value="km">ドイツ</ion-option>
+        <ion-option value="ru">ソ連</ion-option>
+        <ion-option value="uk">イギリス</ion-option>
+        <ion-option value="fr">フランス</ion-option>
+        <ion-option value="pa">パンアジア</ion-option>
+        <ion-option value="po">ポーランド</ion-option>
+        <ion-option value="et">その他</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>艦種</ion-label>
+      <ion-select [(ngModel)]="shiptype" interface="popover" (ionChange)="setShip($event)">
+        <ion-option *ngFor="let i of type" [value]="i.value">{{i.text}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>艦船</ion-label>
+      <ion-select [(ngModel)]="shipname" interface="popover" (ionChange)="holdName($event)">
+        <ion-option *ngFor="let i of ship" [value]="i">{{i.text}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <button ion-button block (click)="toNextPage()">次へ</button>
+
+
+  </ion-list>
 </ion-content>

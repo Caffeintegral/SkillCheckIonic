@@ -1,0 +1,183 @@
+<!--
+  Generated template for the SkillPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{shipName.text}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <button ion-button block (click)="default()">初期値</button>
+    <!-- <ion-list-header>{{shipName.text}}</ion-list-header> -->
+    <ion-list-header>兵装系</ion-list-header>
+
+    <ion-item>
+      <ion-label>熟練砲手</ion-label>
+      <ion-toggle [(ngModel)]="skill.jukurenhousyu"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>基本射撃訓練</ion-label>
+      <ion-toggle [(ngModel)]="skill.kihonsya"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>爆発物専門家</ion-label>
+      <ion-toggle [(ngModel)]="skill.bakusenn"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>上級射撃訓練</ion-label>
+      <ion-toggle [(ngModel)]="skill.joukyu"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>榴弾用慣性信管</ion-label>
+      <ion-toggle [(ngModel)]="skill.ifhe"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>雷速向上</ion-label>
+      <ion-toggle [(ngModel)]="skill.raisokukoujou"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>魚雷専門家</ion-label>
+      <ion-toggle [(ngModel)]="skill.gyoraisenmonka"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>対空兵装の手動制御</ion-label>
+      <ion-toggle [(ngModel)]="skill.shiteitaiku"></ion-toggle>
+    </ion-item>
+
+    <ion-list-header>船体性能系</ion-list-header>
+    <ion-item>
+      <ion-label>抗堪専門家</ion-label>
+      <ion-toggle [(ngModel)]="skill.koutan"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>隠蔽処理専門家</ion-label>
+      <ion-toggle [(ngModel)]="skill.inpei"></ion-toggle>
+    </ion-item>
+
+    <ion-list-header>アップグレード</ion-list-header>
+    <ion-list-header>slot1</ion-list-header>
+    <ion-item>
+      <ion-label>射撃システム改良0</ion-label>
+      <ion-toggle [(ngModel)]="skill.syageki0"></ion-toggle>
+    </ion-item>
+
+    <ion-list-header>slot3</ion-list-header>
+
+    <ion-item>
+      <ion-label>主砲改良2</ion-label>
+      <ion-toggle [(ngModel)]="skill.syuhou2"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>副砲改良2</ion-label>
+      <ion-toggle [(ngModel)]="skill.hukuhou2"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>射撃システム改良1</ion-label>
+      <ion-toggle [(ngModel)]="skill.syageki1"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>射撃管制室改良1</ion-label>
+      <ion-toggle [(ngModel)]="skill.syagekikansei1"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>対空砲改良2</ion-label>
+      <ion-toggle [(ngModel)]="skill.taiku2"></ion-toggle>
+    </ion-item>
+
+    <ion-list-header>slot4</ion-list-header>
+    <ion-item>
+      <ion-label>操舵改良2</ion-label>
+      <ion-toggle [(ngModel)]="skill.souda2"></ion-toggle>
+    </ion-item>
+
+    <ion-list-header>slot5</ion-list-header>
+    <ion-item>
+      <ion-label>隠蔽システム改良1</ion-label>
+      <ion-toggle [(ngModel)]="skill.inpei1"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>操舵改良3</ion-label>
+      <ion-toggle [(ngModel)]="skill.souda3"></ion-toggle>
+    </ion-item>
+
+    <ion-list-header>slot6s</ion-list-header>
+    <ion-item>
+      <ion-label>主砲改良3</ion-label>
+      <ion-toggle [(ngModel)]="skill.syuhou3"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>副砲改良3</ion-label>
+      <ion-toggle [(ngModel)]="skill.hukuhou3"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>魚雷発射管改良3</ion-label>
+      <ion-toggle [(ngModel)]="skill.gyorai3"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>射撃管制装置改良2</ion-label>
+      <ion-toggle [(ngModel)]="skill.syagekikansei2"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>対空砲改良3</ion-label>
+      <ion-toggle [(ngModel)]="skill.taiku3"></ion-toggle>
+    </ion-item>
+
+
+    <ion-list-header>信号旗</ion-list-header>
+    <ion-item>
+      <ion-label>November Echo Setteseven</ion-label>
+      <ion-toggle [(ngModel)]="skill.AAFlag"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Mike Yankee Soxisix</ion-label>
+      <ion-toggle [(ngModel)]="skill.SWFlag"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>India X-Ray</ion-label>
+      <ion-toggle [(ngModel)]="skill.indiaFlag"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Victor Lima</ion-label>
+      <ion-toggle [(ngModel)]="skill.hurricaneFlag"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Sierra Mike</ion-label>
+      <ion-toggle [(ngModel)]="skill.speedFlag"></ion-toggle>
+    </ion-item>
+
+    <ion-list-header>迷彩</ion-list-header>
+    <ion-item>
+      <ion-label>迷彩</ion-label>
+      <ion-toggle [(ngModel)]="skill.meisai"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block (click)="toNextPage()">スキルを適用し表示</button>
+  <!-- <ion-item>
+    {{ship.name}}
+  </ion-item> -->
+
+</ion-content>
