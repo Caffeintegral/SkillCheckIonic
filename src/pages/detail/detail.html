@@ -16,38 +16,81 @@
 
 
 <ion-content padding>
-  <div id='kihon'>
+  <div class='kihon'>
     <h1>基本情報</h1>
-    <div id='box1'>
-      <p>艦名</p>
-      <p>{{shipdetaildata.name}}</p>
-      <p>HP</p>
-      <p>{{shipdetaildata.HP}}</p>
-      <p>最大速度</p>
-      <p>{{shipdetaildata.speed}} knot</p>
-      <p>転舵所要時間</p>
-      <p>{{shipdetaildata.turnTime}} s</p>
+    <div class='box1'>
+      <div class="name">艦名</div>
+      <div class="name">HP</div>
+      <div class="value">{{shipdetaildata.name}}</div>
+      <div class="value">{{shipdetaildata.HP}}</div>
+
+      <div class="name">最大速度</div>
+      <div class="name">転舵所要時間</div>
+      <div class="value">{{shipdetaildata.speed}} knot</div>
+      <div class="value">{{shipdetaildata.turnTime}} s</div>
+
     </div>
   </div>
 
-  <div id='sentai'>
+  <div class='sentai'>
     <h1>船体</h1>
-    <div id='box2'>
+    <div class='box2'>
+      <div class="name">海面発見距離</div>
+      <div class="name">航空発見距離</div>
+      <div class="value">{{shipdetaildata.seaHiding}}</div>
+      <div class="value">{{shipdetaildata.airHiding}}</div>
 
     </div>
   </div>
 
-  <div id='heisou'>
+  <div class='heisou'>
     <h1>主兵装</h1>
-    <div id='box3'>
+    <div class='box3'>
+      <div class="name">口径</div>
+      <div class="name">射程</div>
+      <div class="value">{{shipdetaildata.name}}</div>
+      <div class="value">{{shipdetaildata.HP}}</div>
+
+      <div class="name">装填速度</div>
+      <div class="name">火災発生率</div>
+      <div class="value">{{shipdetaildata.speed}} knot</div>
+      <div class="value">{{shipdetaildata.turnTime}} s</div>
+
+      <div class="name">180度主砲旋回時間</div>
+      <div class="value"></div>
+      <div class="value">{{shipdetaildata.speed}} knot</div>
+      <div class="name"></div>
 
     </div>
   </div>
 
-  <div id='subheisou'>
+  <div class='subheisou'>
     <h1>副兵装</h1>
-    <div id='box4'>
+    <div class='box4'>
+      <div class="name">魚雷射程</div>
+      <div class="name">魚雷装填速度</div>
+      <div class="value">{{shipdetaildata.name}}</div>
+      <div class="value">{{shipdetaildata.HP}}</div>
 
+      <div class="name">雷速</div>
+      <div class="name">転舵所要時間</div>
+      <div class="value">{{shipdetaildata.speed}} knot</div>
+      <div class="value">{{shipdetaildata.turnTime}} s</div>
+
+      <div class="name">副砲射程</div>
+      <div class="name">副砲装填時間</div>
+      <div class="value">{{shipdetaildata.speed}} knot</div>
+      <div class="value">{{shipdetaildata.turnTime}} s</div>
+
+      <div class="name">副砲火災発生率</div>
+      <div class="name">転舵所要時間</div>
+      <div class="value">{{shipdetaildata.speed}} knot</div>
+      <div class="value">{{shipdetaildata.turnTime}} s</div>
+
+      <div class="name">対空砲射程</div>
+      <div class="name">秒間平均ダメージ</div>
+      <div class="value">{{shipdetaildata.speed}} knot</div>
+      <div class="value">{{shipdetaildata.turnTime}} s</div>
     </div>
   </div>
 

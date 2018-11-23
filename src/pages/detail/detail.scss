@@ -1,3 +1,39 @@
 page-detail {
+    .scroll-content{
+        background-color: #FAFAFA;
+    }
+
+    .box1, .box2, .box3, .box4{
+        border-radius: 20px 20px 20px 20px;
+        background-color: #FFFFFF;
+        display:flex;
+        flex-wrap:wrap;
+        margin-bottom: 20px;
+    }
+
+    .name, .value{
+        width: 50%;
+        display: inline-blick;
+        padding: 10px;
+        box-sizing: border-box;
+    
+    }
+    h1{
+        font-size: 20px;
+        color: #2196F3;
+        
+    }
+
+    .name{
+        font-size: 15px;
+        color: #2196F3;
+    }
+    
+    .value{
+        font-size: 20px;
+        width: 47%;
+        margin-top: -20px;
+        margin-left: 3%;
+    }
 
 }
