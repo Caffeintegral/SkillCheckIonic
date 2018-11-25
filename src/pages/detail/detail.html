@@ -37,8 +37,8 @@
     <div class='box2'>
       <div class="name">海面発見距離</div>
       <div class="name">航空発見距離</div>
-      <div class="value">{{shipdetaildata.seaHiding}}</div>
-      <div class="value">{{shipdetaildata.airHiding}}</div>
+      <div class="value">{{shipdetaildata.seaHiding}} km</div>
+      <div class="value">{{shipdetaildata.airHiding}} km</div>
 
     </div>
   </div>
@@ -48,17 +48,17 @@
     <div class='box3'>
       <div class="name">口径</div>
       <div class="name">射程</div>
-      <div class="value">{{shipdetaildata.name}}</div>
-      <div class="value">{{shipdetaildata.HP}}</div>
+      <div class="value">{{shipdetaildata.mainCaliber}} mm</div>
+      <div class="value">{{shipdetaildata.mainRange}} km</div>
 
       <div class="name">装填速度</div>
       <div class="name">火災発生率</div>
-      <div class="value">{{shipdetaildata.speed}} knot</div>
-      <div class="value">{{shipdetaildata.turnTime}} s</div>
+      <div class="value">{{shipdetaildata.mainLoadingTime}} s</div>
+      <div class="value">{{shipdetaildata.mainGunFireRate}} %</div>
 
       <div class="name">180度主砲旋回時間</div>
       <div class="value"></div>
-      <div class="value">{{shipdetaildata.speed}} knot</div>
+      <div class="value">{{shipdetaildata.mainCycleTime}} s</div>
       <div class="name"></div>
 
     </div>
@@ -69,32 +69,32 @@
     <div class='box4'>
       <div class="name">魚雷射程</div>
       <div class="name">魚雷装填速度</div>
-      <div class="value">{{shipdetaildata.name}}</div>
-      <div class="value">{{shipdetaildata.HP}}</div>
+      <div class="value">{{shipdetaildata.torpRange}} km</div>
+      <div class="value">{{shipdetaildata.torpLoadingTime}} s</div>
 
       <div class="name">雷速</div>
-      <div class="name">転舵所要時間</div>
-      <div class="value">{{shipdetaildata.speed}} knot</div>
-      <div class="value">{{shipdetaildata.turnTime}} s</div>
+      <div class="name"></div>
+      <div class="value">{{shipdetaildata.torpSpeed}} knot</div>
+      <div class="value"></div>
 
       <div class="name">副砲射程</div>
       <div class="name">副砲装填時間</div>
-      <div class="value">{{shipdetaildata.speed}} knot</div>
-      <div class="value">{{shipdetaildata.turnTime}} s</div>
+      <div class="value">{{shipdetaildata.subRange}} km</div>
+      <div class="value">{{shipdetaildata.subLoadingTime}} s</div>
 
       <div class="name">副砲火災発生率</div>
-      <div class="name">転舵所要時間</div>
-      <div class="value">{{shipdetaildata.speed}} knot</div>
-      <div class="value">{{shipdetaildata.turnTime}} s</div>
+      <div class="name"></div>
+      <div class="value">{{shipdetaildata.subGunFireRate}} %</div>
+      <div class="value"></div>
 
       <div class="name">対空砲射程</div>
       <div class="name">秒間平均ダメージ</div>
-      <div class="value">{{shipdetaildata.speed}} knot</div>
-      <div class="value">{{shipdetaildata.turnTime}} s</div>
+      <div class="value">{{shipdetaildata.AARange}} km</div>
+      <div class="value">{{shipdetaildata.AADamage}}</div>
     </div>
   </div>
 
-  <ion-list>
+  <!-- <ion-list>
     <ion-item>艦名：{{shipdetaildata.name}}</ion-item>
     <ion-item>艦種：{{shipdetaildata.type}}</ion-item>
     <ion-item>Tier：{{shipdetaildata.tier}}</ion-item>
@@ -116,6 +116,6 @@
     <ion-item>転舵所要時間：{{shipdetaildata.turnTime}} s</ion-item>
     <ion-item>海面発見距離：{{shipdetaildata.seaHiding}} km</ion-item>
     <ion-item>航空発見距離：{{shipdetaildata.airHiding}} km</ion-item>
-  </ion-list>
+  </ion-list> -->
 
 </ion-content>

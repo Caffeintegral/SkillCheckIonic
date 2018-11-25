@@ -145,7 +145,7 @@ export class HomePage {
         { text: 'Shiratsuyu', value: 'Shiratsuyu' },
         { text: 'Akizuki', value: 'Akizuki' },
         { text: 'Kitakaze', value: 'Kitakaze' },
-        { text: 'Harukumo', value: 'Harukumo' }
+        { text: 'Harugumo', value: 'Harukumo' }
 
       ];
     }
