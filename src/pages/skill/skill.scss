@@ -1,3 +1,56 @@
 page-skill {
+.scroll-content{
+        background-color: #FAFAFA;
+        // background-color: #555555;
+    }
 
+    .box1, .box2, .box3, .box4{
+        // border-radius: 20px 20px 20px 20px;
+        background-color: #FFFFFF;
+        // display:flex;
+        // flex-wrap:wrap;
+        margin-bottom: 20px;
+
+        
+    }
+    .seg{
+        margin-bottom: 10px;
+    }
+
+    h1{
+        font-size: 20px;
+        color: #2196F3;
+        
+    }
+    h2{
+        padding-top: 20px;
+        margin-left: 10px;
+        font-size: 20px;
+        width: 100%;
+        color: #2196F3;
+    }
+
+    ion-card {
+        width: 20%;
+        height: 40px;
+        // padding: 20px;
+        text-align: center;
+    }
+
+    .skillLabel {
+        margin-top: 20px;
+        font-size: 20px;
+        // color: #2196F3;
+        $item-ios-divider-color: #999;    
+    $item-ios-divider-background: #999; 
+    $item-md-divider-border-bottom: #999; 
+    }
+
+    .skillDetail{
+        font-size: 10px;
+                $item-ios-divider-color: #999;    
+    $item-ios-divider-background: #999; 
+    $item-md-divider-border-bottom: #999; 
+
+    }
 }

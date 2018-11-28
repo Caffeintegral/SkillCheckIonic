@@ -21,6 +21,8 @@ export class SkillPage {
   shipName: any;
   shipsData: any;
   ship: any;
+  skillLevel: string = 'level1';
+  ugSlot: string = 'slotA';
 
   skill = {
     jukurenhousyu: false,
