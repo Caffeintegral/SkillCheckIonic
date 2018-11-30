@@ -1,5 +1,7 @@
 {
   "name": "wowsApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
