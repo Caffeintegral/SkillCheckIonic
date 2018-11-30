@@ -18,14 +18,14 @@ page-skill {
     }
 
     h1{
-        font-size: 20px;
+        font-size: 6.2vw;
         color: #2196F3;
         
     }
     h2{
-        padding-top: 20px;
-        margin-left: 10px;
-        font-size: 20px;
+        padding-top: 5%;
+        margin-left: 5%;
+        font-size: 5.5vw;
         width: 100%;
         color: #2196F3;
     }
@@ -39,7 +39,7 @@ page-skill {
 
     .skillLabel {
         margin-top: 20px;
-        font-size: 20px;
+        font-size: 6vw;
         // color: #2196F3;
         $item-ios-divider-color: #999;    
     $item-ios-divider-background: #999; 
@@ -47,7 +47,7 @@ page-skill {
     }
 
     .skillDetail{
-        font-size: 10px;
+        font-size: 0.5vw;
                 $item-ios-divider-color: #999;    
     $item-ios-divider-background: #999; 
     $item-md-divider-border-bottom: #999; 

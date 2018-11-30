@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{shipName.text}}</ion-title>
+    <ion-title>{{skillPoint}}/19 point</ion-title>
   </ion-navbar>
 
 
@@ -17,8 +17,8 @@
 <ion-content padding>
 
   <div class='skill'>
-    <h1>スキル選択</h1>
-    <p>スキルポイント合計</p>
+    <h1>スキル：{{shipName.text}}</h1>
+    <!-- <div class = "skillPoint">{{skillPoint}}/19 point</div> -->
     <ion-segment class="seg" [(ngModel)]="skillLevel" color="dark">
       <ion-segment-button value="level1">
         <div class="inSeg">Level1</div>
@@ -35,59 +35,60 @@
     </ion-segment>
     <div class='box1'>
       <div [ngSwitch]="skillLevel">
+        <!---------------------------------------Level1---------------------------------------------------------------------------------->
         <div *ngSwitchCase="'level1'">
           <h2>Level1</h2>
           <ion-list>
             <ion-item no-lines>
               <!-- <ion-label class="skillLabel" floating>危険察知</ion-label> -->
-              <ion-label class="skillLabelOnly">危険察知</ion-label>
-              <ion-input class="skillDetail" value=" "></ion-input>
-              <ion-checkbox></ion-checkbox>
+              <ion-label class="skillLabel" floating>危険察知</ion-label>
+              <ion-input class="skillDetail" value="ロックされている敵の数がわかる"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty1"  (click)="skillPointCalc1(skill.empty1)"></ion-checkbox>
             </ion-item>
 
             <ion-item no-lines>
               <ion-label class="skillLabel" floating>予防整備</ion-label>
               <ion-input class="skillDetail" value="モジュールが機能停止する確率:-30%"></ion-input>
-              <ion-checkbox></ion-checkbox>
+              <ion-checkbox [(ngModel)]="skill.empty2"  (click)="skillPointCalc1(skill.empty2)"></ion-checkbox>
             </ion-item>
 
             <ion-item no-lines>
               <ion-label class="skillLabel" floating>熟練装填手</ion-label>
               <ion-input class="skillDetail" value="弾種切り替え所要時間:-50%"></ion-input>
-              <ion-checkbox></ion-checkbox>
+              <ion-checkbox [(ngModel)]="skill.empty3"  (click)="skillPointCalc1(skill.empty3)"></ion-checkbox>
             </ion-item>
 
             <ion-item no-lines>
               <ion-label class="skillLabel" floating>航空機整備専門家</ion-label>
               <ion-input class="skillDetail" value="航空機のHP量:+5% 戦闘機の整備時間:-10%"></ion-input>
               <ion-input class="skillDetail" value=" 急降下爆撃機の整備時間:-10% 雷撃機の整備時間:-10%"></ion-input>
-              <ion-checkbox></ion-checkbox>
+              <ion-checkbox [(ngModel)]="skill.empty4"  (click)="skillPointCalc1(skill.empty4)"></ion-checkbox>
             </ion-item>
 
             <ion-item no-lines>
               <ion-label class="skillLabel" floating>水上機指揮所</ion-label>
               <ion-input class="skillDetail" value="水上機:+1 水上機の速力:-20%"></ion-input>
-              <ion-checkbox></ion-checkbox>
+              <ion-checkbox [(ngModel)]="skill.empty4"  (click)="skillPointCalc1(skill.empty5)"></ion-checkbox>
             </ion-item>
 
             <ion-item no-lines>
               <ion-label class="skillLabel" floating>ドッグファイト・エース</ion-label>
               <ion-input class="skillDetail" value="平均ダメージ(中隊のTier差1段階毎に):+10%"></ion-input>
               <ion-input class="skillDetail" value="戦闘機の弾薬:+10%"></ion-input>
-              <ion-checkbox></ion-checkbox>
+              <ion-checkbox [(ngModel)]="skill.empty6"  (click)="skillPointCalc1(skill.empty6)"></ion-checkbox>
             </ion-item>
 
             <ion-item no-lines>
-              <ion-label class="skillLabelOnly">敵弾接近警報</ion-label>
-              <ion-input class="skillDetail" value="　"></ion-input>
-              <ion-checkbox></ion-checkbox>
+              <ion-label class="skillLabel" floating>敵弾接近警報</ion-label>
+              <ion-input class="skillDetail" value="敵の長距離砲撃に対する警告を表示"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty7"  (click)="skillPointCalc1(skill.empty7)"></ion-checkbox>
             </ion-item>
 
             <ion-item no-lines>
               <ion-label class="skillLabel" floating>回避機動</ion-label>
               <ion-input class="skillDetail" value="攻撃機の被発見性:-20% 攻撃機のHP:+75%"></ion-input>
               <ion-input class="skillDetail" value="攻撃機の速力:-30%"></ion-input>
-              <ion-checkbox></ion-checkbox>
+              <ion-checkbox [(ngModel)]="skill.empty8"  (click)="skillPointCalc1(skill.empty8)"></ion-checkbox>
             </ion-item>
 
           </ion-list>
@@ -96,41 +97,185 @@
 
 
         </div>
-
+        <!---------------------------------------Level2---------------------------------------------------------------------------------->
         <div *ngSwitchCase="'level2'">
           <h2>Level2</h2>
-          <div class="A1">危険察知</div>
-          <div class="B1">予防整備</div>
-          <div class="A2">熟練装填手</div>
-          <div class="B2">航空機整備専門家</div>
-          <div class="A3">水上機指揮所</div>
-          <div class="B3">ドッグファイト・エース</div>
-          <div class="A4">敵談接近警報</div>
-          <div class="B4">回避機動</div>
+          <ion-list>
+            <ion-item no-lines>
+              <!-- <ion-label class="skillLabel" floating>危険察知</ion-label> -->
+              <ion-label class="skillLabel" floating>厳戒態勢</ion-label>
+              <ion-input class="skillDetail" value="消耗品「応急工作班」の再準備時間:-10%"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty9"  (click)="skillPointCalc2(skill.empty9)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>なんでも屋</ion-label>
+              <ion-input class="skillDetail" value="全ての搭載中の消耗品の準備時間:-5%"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty10"  (click)="skillPointCalc2(skill.empty10)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>熟練砲手</ion-label>
+              <ion-input class="skillDetail" value="弾139mm以下の砲の旋回時間:+2.5度/秒"></ion-input>
+              <ion-input class="skillDetail" value="139mm超の砲の旋回時間:+0.7度/秒"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.jukurenhousyu" (click)="skillPointCalc2(skill.jukurenhousyu)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>雷速向上</ion-label>
+              <ion-input class="skillDetail" value="雷速:+5knot 魚雷射程:-20%"></ion-input>   
+              <ion-checkbox [(ngModel)]="skill.raisokukoujou"  (click)="skillPointCalc2(skill.raisokukoujou)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>煙幕専門家</ion-label>
+              <ion-input class="skillDetail" value="煙幕の半径:+20%"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty11"  (click)="skillPointCalc2(skill.empty11)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>エース後部銃手</ion-label>
+              <ion-input class="skillDetail" value="後部銃座を持つ航空機の防御兵装の秒間平均ダメージ:+10%"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty12"  (click)="skillPointCalc2(skill.empty12)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>アドレナリン・ラッシュ</ion-label>
+              <ion-input class="skillDetail" value="自艦のHPを1%喪失する毎に"></ion-input>
+              <ion-input class="skillDetail" value="全種類の兵装の装填時間 -0.2%"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty13"  (click)="skillPointCalc2(skill.empty13)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>最後の抵抗</ion-label>
+              <ion-input class="skillDetail" value="主機または操舵装置が機能停止した場合であっても"></ion-input>
+              <ion-input class="skillDetail" value="艦の移動・転舵が可能になる"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty14"  (click)="skillPointCalc2(skill.empty14)"></ion-checkbox>
+            </ion-item>
+
+          </ion-list>
         </div>
 
+        <!---------------------------------------Level3---------------------------------------------------------------------------------->
         <div *ngSwitchCase="'level3'">
           <h2>Level3</h2>
-          <div class="A1">危険察知</div>
-          <div class="B1">予防整備</div>
-          <div class="A2">熟練装填手</div>
-          <div class="B2">航空機整備専門家</div>
-          <div class="A3">水上機指揮所</div>
-          <div class="B3">ドッグファイト・エース</div>
-          <div class="A4">敵談接近警報</div>
-          <div class="B4">回避機動</div>
+          <ion-list>
+            <ion-item no-lines>
+              <!-- <ion-label class="skillLabel" floating>危険察知</ion-label> -->
+              <ion-label class="skillLabel" floating>応急対応の基本</ion-label>
+              <ion-input class="skillDetail" value="修理、消火、浸水復旧の所要時間:-15％"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty15"  (click)="skillPointCalc3(skill.empty15)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>抗堪専門家</ion-label>
+              <ion-input class="skillDetail" value="艦のTier 1段階あたりHP:+350"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.koutan"  (click)="skillPointCalc3(skill.koutan)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>魚雷専門家</ion-label>
+              <ion-input class="skillDetail" value="魚雷発射管の装填時間:-10％ 雷撃機の整備時間:-20％"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.gyoraisenmonka"  (click)="skillPointCalc3(skill.gyoraisenmonka)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>緊急発艦</ion-label>
+              <ion-input class="skillDetail" value="空母に火災発生中の航空機整備時間:+100％"></ion-input>              
+              <ion-checkbox [(ngModel)]="skill.empty16"  (click)="skillPointCalc3(skill.empty16)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>基本射撃訓練</ion-label>
+              <ion-input class="skillDetail" value="口径139mm以下の主砲、および副砲の装填時間:-10％"></ion-input>
+              <ion-input class="skillDetail" value="対空砲の秒間平均ダメージ:+20％"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.kihonsya"  (click)="skillPointCalc3(skill.kihonsya)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>管理</ion-label>
+              <ion-input class="skillDetail" value="	艦に登載中の全消耗品の+1回の追加使用"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty17"  (click)="skillPointCalc3(skill.empty17)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>爆発物専門家</ion-label>
+              <ion-input class="skillDetail" value="主砲弾、副砲弾または爆弾による"></ion-input>
+              <ion-input class="skillDetail" value="目標に対する火災発生率:+2％"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.bakusenn"  (click)="skillPointCalc3(skill.bakusenn)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>警戒</ion-label>
+              <ion-input class="skillDetail" value="魚雷捕捉範囲:+25％"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty18"  (click)="skillPointCalc3(skill.empty18)"></ion-checkbox>
+            </ion-item>
+
+          </ion-list>
         </div>
 
+        <!---------------------------------------Level4---------------------------------------------------------------------------------->
         <div *ngSwitchCase="'level4'">
           <h2>Level4</h2>
-          <div class="A1">危険察知</div>
-          <div class="B1">予防整備</div>
-          <div class="A2">熟練装填手</div>
-          <div class="B2">航空機整備専門家</div>
-          <div class="A3">水上機指揮所</div>
-          <div class="B3">ドッグファイト・エース</div>
-          <div class="A4">敵談接近警報</div>
-          <div class="B4">回避機動</div>
+          <ion-list>
+            <ion-item no-lines>
+              <!-- <ion-label class="skillLabel" floating>危険察知</ion-label> -->
+              <ion-label class="skillLabel" floating>副砲の手動制御</ion-label>
+              <ion-input class="skillDetail" value="Tier I-VI 艦艇の副砲の最大散布界:-15％"></ion-input>
+              <ion-input class="skillDetail" value="Tier VII-X 艦艇の副砲の最大散布界:-60％"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty19"  (click)="skillPointCalc4(skill.empty19)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>防火処理</ion-label>
+              <ion-input class="skillDetail" value="火災発生率:-10%"></ion-input>
+              <ion-input class="skillDetail" value="火災発生箇所を最大3ヶ所までに抑制"></ion-input>
+
+              <ion-checkbox [(ngModel)]="skill.empty20"  (click)="skillPointCalc4(skill.empty20)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>榴弾用慣性信管</ion-label>
+              <ion-input class="skillDetail" value="HE弾の装甲貫通力:+30％"></ion-input>
+              <ion-input class="skillDetail" value="139mm以下の砲のHE弾の火災発生率:-1％"></ion-input>
+              <ion-input class="skillDetail" value="139mm超の砲のHE弾の火災発生率:-3％"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.ifhe"  (click)="skillPointCalc4(skill.ifhe)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>制空権</ion-label>
+              <ion-input class="skillDetail" value="戦闘機:+1 爆撃機:+1"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty21"  (click)="skillPointCalc4(skill.empty21)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>上級射撃訓練</ion-label>
+              <ion-input class="skillDetail" value="139mm以下の主砲、および副砲の射程:+20％"></ion-input>
+              <ion-input class="skillDetail" value="対空砲の射程:+20％"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.joukyu"  (click)="skillPointCalc4(skill.joukyu)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>対空兵装の手動制御</ion-label>
+              <ion-input class="skillDetail" value="口径85mm超の対空砲による優先目標に対する"></ion-input>
+              <ion-input class="skillDetail" value="秒間平均ダメージ:+100％"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.shiteitaiku"  (click)="skillPointCalc4(skill.shiteitaiku)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>無線方向探知</ion-label>
+              <ion-input class="skillDetail" value="最も近い敵艦の方位を表示"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.empty21"  (click)="skillPointCalc4(skill.empty21)"></ion-checkbox>
+            </ion-item>
+
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>隠蔽処理専門家</ion-label>
+              <ion-input class="skillDetail" value="駆逐艦の被発見性:-10％ 巡洋艦の被発見性:-12％"></ion-input>
+              <ion-input class="skillDetail" value="戦艦の被発見性:-14％ 航空母艦の被発見性 :16％"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.inpei"  (click)="skillPointCalc4(skill.inpei)"></ion-checkbox>
+            </ion-item>
+
+          </ion-list>
         </div>
       </div>
 
@@ -140,7 +285,7 @@
   </div>
 
   <div class='ug'>
-    <h1>アップグレード選択</h1>
+    <h1>アップグレード</h1>
     <ion-segment [(ngModel)]="ugSlot" color="dark">
       <ion-segment-button value="slotA">
         <div class="inSeg">slotA</div>
@@ -165,118 +310,259 @@
       <div [ngSwitch]="ugSlot">
         <div *ngSwitchCase="'slotA'">
           <h2>slotA</h2>
+          <ion-list>
           <ion-item no-lines>
-            <!-- <ion-label class="skillLabel" floating>危険察知</ion-label> -->
-            <ion-label class="skillLabelOnly">危険察知</ion-label>
-            <ion-input class="skillDetail" value=" "></ion-input>
+            <ion-label class="skillLabel" floating>主兵装改良1</ion-label>
+            <ion-input class="skillDetail" value="主砲の機能停止の発生率:-20% 主砲の抗堪性:+50%"></ion-input>
+            <ion-input class="skillDetail" value="主砲修理時間:+20% 魚雷発射管の機能停止の発生率:-20%"></ion-input>
             <ion-checkbox></ion-checkbox>
           </ion-item>
 
           <ion-item no-lines>
-            <ion-label class="skillLabel" floating>予防整備</ion-label>
-            <ion-input class="skillDetail" value="モジュールが機能停止する確率:-30%"></ion-input>
+            <ion-label class="skillLabel" floating>副兵装改良1</ion-label>
+            <ion-input class="skillDetail" value="副砲の抗堪性:+100% 対空砲座の坑堪性:+100%"></ion-input>
             <ion-checkbox></ion-checkbox>
           </ion-item>
 
           <ion-item no-lines>
-            <ion-label class="skillLabel" floating>熟練装填手</ion-label>
-            <ion-input class="skillDetail" value="弾種切り替え所要時間:-50%"></ion-input>
+            <ion-label class="skillLabel" floating>弾薬庫改良1</ion-label>
+            <ion-input class="skillDetail" value="自艦の弾薬庫誘爆率:-70%"></ion-input>
             <ion-checkbox></ion-checkbox>
           </ion-item>
 
           <ion-item no-lines>
-            <ion-label class="skillLabel" floating>航空機整備専門家</ion-label>
-            <ion-input class="skillDetail" value="航空機のHP量:+5% 戦闘機の整備時間:-10%"></ion-input>
-            <ion-input class="skillDetail" value=" 急降下爆撃機の整備時間:-10% 雷撃機の整備時間:-10%"></ion-input>
+            <ion-label class="skillLabel" floating>飛行機隊改良1</ion-label>
+            <ion-input class="skillDetail" value="航空機銃の秒間平均ダメージ:+10%"></ion-input>
             <ion-checkbox></ion-checkbox>
           </ion-item>
 
           <ion-item no-lines>
-            <ion-label class="skillLabel" floating>水上機指揮所</ion-label>
-            <ion-input class="skillDetail" value="水上機:+1 水上機の速力:-20%"></ion-input>
+            <ion-label class="skillLabel" floating>射撃システム改良0</ion-label>
+            <ion-input class="skillDetail" value="主砲旋回速度:+20% 主砲弾の最大散布界:-40%"></ion-input>
+            <ion-input class="skillDetail" value="魚雷発射管旋回速度:+20% 副砲最大射程:+20%"></ion-input>
+            <ion-checkbox [(ngModel)]="skill.syageki0"></ion-checkbox>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label class="skillLabel" floating>応急工作班改良1</ion-label>
+            <ion-input class="skillDetail" value="応急工作班の有効時間:+40%"></ion-input>
             <ion-checkbox></ion-checkbox>
           </ion-item>
 
           <ion-item no-lines>
-            <ion-label class="skillLabel" floating>ドッグファイト・エース</ion-label>
-            <ion-input class="skillDetail" value="平均ダメージ(中隊のTier差1段階毎に):+10%"></ion-input>
-            <ion-input class="skillDetail" value="戦闘機の弾薬:+10%"></ion-input>
+            <ion-label class="skillLabel" floating>着弾観測機改良1</ion-label>
+            <ion-input class="skillDetail" value="着弾観測機の有効時間:+30%"></ion-input>
             <ion-checkbox></ion-checkbox>
           </ion-item>
-
-          <ion-item no-lines>
-            <ion-label class="skillLabelOnly">敵弾接近警報</ion-label>
-            <ion-input class="skillDetail" value="　"></ion-input>
-            <ion-checkbox></ion-checkbox>
-          </ion-item>
-
-          <ion-item no-lines>
-            <ion-label class="skillLabel" floating>回避機動</ion-label>
-            <ion-input class="skillDetail" value="攻撃機の被発見性:-20% 攻撃機のHP:+75%"></ion-input>
-            <ion-input class="skillDetail" value="攻撃機の速力:-30%"></ion-input>
-            <ion-checkbox></ion-checkbox>
-          </ion-item>
+        </ion-list>
 
         </div>
 
         <div *ngSwitchCase="'slotB'">
-          <h2>Level2</h2>
-          <div class="A1">危険察知</div>
-          <div class="B1">予防整備</div>
-          <div class="A2">熟練装填手</div>
-          <div class="B2">航空機整備専門家</div>
-          <div class="A3">水上機指揮所</div>
-          <div class="B3">ドッグファイト・エース</div>
-          <div class="A4">敵談接近警報</div>
-          <div class="B4">回避機動</div>
+          <h2>slotB</h2>
+          <ion-list>
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>ダメージコントロールシステム改良1</ion-label>
+                <ion-input class="skillDetail" value="浸水発生率および魚雷を対水雷防御に"></ion-input>
+                <ion-input class="skillDetail" value="被雷した際の被ダメージ:-3%"></ion-input>
+                <ion-input class="skillDetail" value="火災発生率:-5%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>推力改良1</ion-label>
+                <ion-input class="skillDetail" value="主機の機能停止の発生率:-20% 主機の修理時間:-20%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>操舵装置改良1</ion-label>
+                <ion-input class="skillDetail" value="操舵装置修理時間:-20% 操舵装置の機能停止の発生率:-20%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>エンジンブースト改良1</ion-label>
+                <ion-input class="skillDetail" value="エンジンブーストの有効時間:+50%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>水中聴音改良1</ion-label>
+                <ion-input class="skillDetail" value="水中聴音の有効時間:+20%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>対空防御砲火改良1</ion-label>
+                <ion-input class="skillDetail" value="対空防御砲火の有効時間:+20%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>警戒レーダー改良１</ion-label>
+                <ion-input class="skillDetail" value="警戒レーダーの有効時間:+20%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+            </ion-list>
         </div>
 
         <div *ngSwitchCase="'slotC'">
-          <h2>Level3</h2>
-          <div class="A1">危険察知</div>
-          <div class="B1">予防整備</div>
-          <div class="A2">熟練装填手</div>
-          <div class="B2">航空機整備専門家</div>
-          <div class="A3">水上機指揮所</div>
-          <div class="B3">ドッグファイト・エース</div>
-          <div class="A4">敵談接近警報</div>
-          <div class="B4">回避機動</div>
+          <h2>slotC</h2>
+          <ion-list>
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>主砲改良2</ion-label>
+                <ion-input class="skillDetail" value="主砲装填時間:+5% 主砲旋回速度:+15%"></ion-input>
+                <ion-checkbox [(ngModel)]="skill.syuhou2"></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>副砲改良2</ion-label>
+                <ion-input class="skillDetail" value="副砲最大射程:+20% 副砲弾の最大散布界:-20%"></ion-input>
+                <ion-checkbox [(ngModel)]="skill.hukuhou2"></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>射撃システム改良1</ion-label>
+                <ion-input class="skillDetail" value="主砲弾の最大散布界:-7% 魚雷発射管旋回速度:+20%"></ion-input>
+                <ion-input class="skillDetail" value="副砲最大射程:+5% 副砲弾の最大散布界:-5%"></ion-input>
+                <ion-checkbox [(ngModel)]="skill.syageki1"></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>射撃管制室改良1</ion-label>
+                <ion-input class="skillDetail" value="主砲最大射程:+16%"></ion-input>
+                <ion-input class="skillDetail" value="副砲最大射程:+5% 副砲弾の最大散布界:-5%"></ion-input>
+                <ion-checkbox [(ngModel)]="skill.syagekikansei1"></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>対空砲改良2</ion-label>
+                <ion-input class="skillDetail" value="対空砲座の最大射程:+20%"></ion-input>
+                <ion-checkbox [(ngModel)]="skill.taiku2"></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>飛行機隊改良2</ion-label>
+                <ion-input class="skillDetail" value="戦闘機のHP:+20%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>航空管制改良1</ion-label>
+                <ion-input class="skillDetail" value="航空機の整備時間:-10%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>発煙装置改良1</ion-label>
+                <ion-input class="skillDetail" value="スモークの展張時間:+30% スモークの持続時間:-5%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+            </ion-list>
         </div>
 
         <div *ngSwitchCase="'slotD'">
-          <h2>Level4</h2>
-          <div class="A1">危険察知</div>
-          <div class="B1">予防整備</div>
-          <div class="A2">熟練装填手</div>
-          <div class="B2">航空機整備専門家</div>
-          <div class="A3">水上機指揮所</div>
-          <div class="B3">ドッグファイト・エース</div>
-          <div class="A4">敵談接近警報</div>
-          <div class="B4">回避機動</div>
+          <h2>slotD</h2>
+          <ion-list>
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>ダメージコントロールシステム改良2</ion-label>
+                <ion-input class="skillDetail" value="浸水復旧時間:-15% 消火時間:-15%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>推力改良2</ion-label>
+                <ion-input class="skillDetail" value="最大出力への到達時間:-50% "></ion-input>
+                <ion-input class="skillDetail" value="艦が移動を開始する際のエンジン出力を向上"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>操舵装置改良2</ion-label>
+                <ion-input class="skillDetail" value="転舵所要時間:-20%"></ion-input>
+                <ion-checkbox [(ngModel)]="skill.souda2"></ion-checkbox>
+              </ion-item>
+            </ion-list>
         </div>
 
         <div *ngSwitchCase="'slotE'">
-          <h2>Level4</h2>
-          <div class="A1">危険察知</div>
-          <div class="B1">予防整備</div>
-          <div class="A2">熟練装填手</div>
-          <div class="B2">航空機整備専門家</div>
-          <div class="A3">水上機指揮所</div>
-          <div class="B3">ドッグファイト・エース</div>
-          <div class="A4">敵談接近警報</div>
-          <div class="B4">回避機動</div>
+          <h2>slotE</h2>
+          <ion-list>
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>隠蔽システム改良1</ion-label>
+                <ion-input class="skillDetail" value="発見距離:-10%"></ion-input>
+                <ion-input class="skillDetail" value="自艦を攻撃中の敵が射撃した砲弾の最大散布界:+5%"></ion-input>
+                <ion-checkbox [(ngModel)]="skill.inpei1"></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>目標測距装置改良1</ion-label>
+                <ion-input class="skillDetail" value="敵艦艇の強制捕捉範囲:+50%"></ion-input>
+                <ion-input class="skillDetail" value="最大目視範囲:+20% 魚雷捕捉範囲:+20%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>操舵装置改良3</ion-label>
+                <ion-input class="skillDetail" value="転舵所要時間:-40% 操舵装置修理時間:-80%"></ion-input>
+                <ion-checkbox [(ngModel)]="skill.souda3"></ion-checkbox>
+              </ion-item>
+            </ion-list>
         </div>
 
         <div *ngSwitchCase="'slotF'">
-          <h2>Level4</h2>
-          <div class="A1">危険察知</div>
-          <div class="B1">予防整備</div>
-          <div class="A2">熟練装填手</div>
-          <div class="B2">航空機整備専門家</div>
-          <div class="A3">水上機指揮所</div>
-          <div class="B3">ドッグファイト・エース</div>
-          <div class="A4">敵談接近警報</div>
-          <div class="B4">回避機動</div>
+          <h2>slotF</h2>
+          <ion-list>
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>主砲改良3</ion-label>
+                <ion-input class="skillDetail" value="主砲装填時間:-12% 主砲旋回速度:-13%"></ion-input>
+                <ion-checkbox [(ngModel)]="skill.syuhou3"></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>副砲改良3</ion-label>
+                <ion-input class="skillDetail" value="副砲装填時間:-20%"></ion-input>
+                <ion-checkbox [(ngModel)]="skill.hukuhou3"></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>魚雷発射管改良3</ion-label>
+                <ion-input class="skillDetail" value="魚雷発射管装填時間:-15%"></ion-input>
+                <ion-input class="skillDetail" value="魚雷発射管の機能停止の発生率:+50%"></ion-input>
+                <ion-checkbox [(ngModel)]="skill.gyorai3"></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>射撃管制装置改良2</ion-label>
+                <ion-input class="skillDetail" value="主砲最大射程:+16%"></ion-input>
+                <ion-checkbox [(ngModel)]="skill.syagekikansei2"></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>射撃管制室改良2</ion-label>
+                <ion-input class="skillDetail" value="主砲弾の最大散布界:-11%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>対空砲改良3</ion-label>
+                <ion-input class="skillDetail" value="対空砲座の秒間平均ダメージ:+25%"></ion-input>
+                <ion-checkbox [(ngModel)]="skill.taiku3"></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>飛行機隊改良3</ion-label>
+                <ion-input class="skillDetail" value="攻撃機のHP:+15%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+    
+              <ion-item no-lines>
+                <ion-label class="skillLabel" floating>航空管制改良2</ion-label>
+                <ion-input class="skillDetail" value="航空機の最大速度:+5%"></ion-input>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+            </ion-list>
         </div>
       </div>
 
@@ -288,173 +574,58 @@
 
   <div class='others'>
     <h1>信号旗・迷彩</h1>
-    <div class='box3'></div>
+    <div class='box3'>
+        <!-- <h2>信号旗・迷彩</h2> -->
+        <ion-list>
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>November Echo Setteseven</ion-label>
+              <ion-input class="skillDetail" value="平均対空ダメージ:+10%"></ion-input>
+              <ion-input class="skillDetail" value="航空機の防御兵装のダメージ:+10%"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.AAFlag"></ion-checkbox>
+            </ion-item>
+  
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>Mike Yankee Soxisix</ion-label>
+              <ion-input class="skillDetail" value="副砲の射程:+5% 副砲の装填時間:-5%"></ion-input>
+              <ion-input class="skillDetail" value="副砲弾の最大散布界:-5%"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.SWFlag"></ion-checkbox>
+            </ion-item>
+  
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>India X-Ray</ion-label>
+              <ion-input class="skillDetail" value="口径160mm以下の砲弾による火災発生率:+0.5%"></ion-input>
+              <ion-input class="skillDetail" value="口径160mmを超える砲弾および航空爆弾による"></ion-input>
+              <ion-input class="skillDetail" value="火災発生率:+1% 自艦の弾薬庫誘爆率:+5%"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.indiaFlag"></ion-checkbox>
+            </ion-item>
+  
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>Victor Lima</ion-label>
+              <ion-input class="skillDetail" value="口径160mm以下の砲弾による火災発生率:+0.5%"></ion-input>
+              <ion-input class="skillDetail" value="口径160mmを超える砲弾および航空爆弾による"></ion-input>
+              <ion-input class="skillDetail" value="火災発生率:+1% 自艦の弾薬庫誘爆率:+5%"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.hurricaneFlag"></ion-checkbox>
+            </ion-item>
+  
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>Sierra Mike</ion-label>
+              <ion-input class="skillDetail" value="艦の最大速度:+5%"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.speedFlag"></ion-checkbox>
+            </ion-item>
+  
+            <ion-item no-lines>
+              <ion-label class="skillLabel" floating>迷彩</ion-label>
+              <ion-input class="skillDetail" value="海面発見距離:-3%"></ion-input>
+              <ion-input class="skillDetail" value="自艦を攻撃中の敵が射撃した砲弾の散布界:+4%"></ion-input>
+              <ion-checkbox [(ngModel)]="skill.meisai"></ion-checkbox>
+            </ion-item>
+          </ion-list>
+
+    </div>
 
   </div>
 
-  <!-- <ion-list>
+  <button ion-button block (click)="toNextPage()">Next</button>
 
-    <button ion-button block (click)="default()">初期値</button>
-    <ion-list-header>兵装系</ion-list-header>
-
-    <ion-item>
-      <ion-label>熟練砲手</ion-label>
-      <ion-toggle [(ngModel)]="skill.jukurenhousyu"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>基本射撃訓練</ion-label>
-      <ion-toggle [(ngModel)]="skill.kihonsya"></ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-label>爆発物専門家</ion-label>
-      <ion-toggle [(ngModel)]="skill.bakusenn"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>上級射撃訓練</ion-label>
-      <ion-toggle [(ngModel)]="skill.joukyu"></ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-label>榴弾用慣性信管</ion-label>
-      <ion-toggle [(ngModel)]="skill.ifhe"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>雷速向上</ion-label>
-      <ion-toggle [(ngModel)]="skill.raisokukoujou"></ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-label>魚雷専門家</ion-label>
-      <ion-toggle [(ngModel)]="skill.gyoraisenmonka"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>対空兵装の手動制御</ion-label>
-      <ion-toggle [(ngModel)]="skill.shiteitaiku"></ion-toggle>
-    </ion-item>
-
-    <ion-list-header>船体性能系</ion-list-header>
-    <ion-item>
-      <ion-label>抗堪専門家</ion-label>
-      <ion-toggle [(ngModel)]="skill.koutan"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>隠蔽処理専門家</ion-label>
-      <ion-toggle [(ngModel)]="skill.inpei"></ion-toggle>
-    </ion-item>
-
-    <ion-list-header>アップグレード</ion-list-header>
-    <ion-list-header>slot1</ion-list-header>
-    <ion-item>
-      <ion-label>射撃システム改良0</ion-label>
-      <ion-toggle [(ngModel)]="skill.syageki0"></ion-toggle>
-    </ion-item>
-
-    <ion-list-header>slot3</ion-list-header>
-
-    <ion-item>
-      <ion-label>主砲改良2</ion-label>
-      <ion-toggle [(ngModel)]="skill.syuhou2"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>副砲改良2</ion-label>
-      <ion-toggle [(ngModel)]="skill.hukuhou2"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>射撃システム改良1</ion-label>
-      <ion-toggle [(ngModel)]="skill.syageki1"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>射撃管制室改良1</ion-label>
-      <ion-toggle [(ngModel)]="skill.syagekikansei1"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>対空砲改良2</ion-label>
-      <ion-toggle [(ngModel)]="skill.taiku2"></ion-toggle>
-    </ion-item>
-
-    <ion-list-header>slot4</ion-list-header>
-    <ion-item>
-      <ion-label>操舵改良2</ion-label>
-      <ion-toggle [(ngModel)]="skill.souda2"></ion-toggle>
-    </ion-item>
-
-    <ion-list-header>slot5</ion-list-header>
-    <ion-item>
-      <ion-label>隠蔽システム改良1</ion-label>
-      <ion-toggle [(ngModel)]="skill.inpei1"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>操舵改良3</ion-label>
-      <ion-toggle [(ngModel)]="skill.souda3"></ion-toggle>
-    </ion-item>
-
-    <ion-list-header>slot6s</ion-list-header>
-    <ion-item>
-      <ion-label>主砲改良3</ion-label>
-      <ion-toggle [(ngModel)]="skill.syuhou3"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>副砲改良3</ion-label>
-      <ion-toggle [(ngModel)]="skill.hukuhou3"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>魚雷発射管改良3</ion-label>
-      <ion-toggle [(ngModel)]="skill.gyorai3"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>射撃管制装置改良2</ion-label>
-      <ion-toggle [(ngModel)]="skill.syagekikansei2"></ion-toggle>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>対空砲改良3</ion-label>
-      <ion-toggle [(ngModel)]="skill.taiku3"></ion-toggle>
-    </ion-item>
-
-
-    <ion-list-header>信号旗</ion-list-header>
-    <ion-item>
-      <ion-label>November Echo Setteseven</ion-label>
-      <ion-toggle [(ngModel)]="skill.AAFlag"></ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-label>Mike Yankee Soxisix</ion-label>
-      <ion-toggle [(ngModel)]="skill.SWFlag"></ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-label>India X-Ray</ion-label>
-      <ion-toggle [(ngModel)]="skill.indiaFlag"></ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-label>Victor Lima</ion-label>
-      <ion-toggle [(ngModel)]="skill.hurricaneFlag"></ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-label>Sierra Mike</ion-label>
-      <ion-toggle [(ngModel)]="skill.speedFlag"></ion-toggle>
-    </ion-item>
-
-    <ion-list-header>迷彩</ion-list-header>
-    <ion-item>
-      <ion-label>迷彩</ion-label>
-      <ion-toggle [(ngModel)]="skill.meisai"></ion-toggle>
-    </ion-item>
-  </ion-list> -->
-
-  <button ion-button block (click)="toNextPage()">スキルを適用し表示</button>
-  <!-- <ion-item>
-    {{ship.name}}
-  </ion-item> -->
 
 </ion-content>

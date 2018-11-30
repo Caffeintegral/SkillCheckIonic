@@ -23,8 +23,32 @@ export class SkillPage {
   ship: any;
   skillLevel: string = 'level1';
   ugSlot: string = 'slotA';
+  skillPoint: number = 0;
 
   skill = {
+    empty1: false,
+    empty2: false,
+    empty3: false,
+    empty4: false,
+    empty5: false,
+    empty6: false,
+    empty7: false,
+    empty8: false,
+    empty9: false,
+    empty10: false,
+    empty11: false,
+    empty12: false,
+    empty13: false,
+    empty14: false,
+    empty15: false,
+    empty16: false,
+    empty17: false,
+    empty18: false,
+    empty19: false,
+    empty20: false,
+    empty21: false,
+    empty22: false,
+
     jukurenhousyu: false,
     kihonsya: false,
     bakusenn: false,
@@ -74,49 +98,47 @@ export class SkillPage {
   }
 
   toNextPage() {
-    if (this.skill.jukurenhousyu) {
+    if (this.skill.jukurenhousyu) { //熟練砲手
       this.jukurenhousyuSkill()
     }
 
-    if (this.skill.kihonsya) {
+    if (this.skill.kihonsya) { //基本射撃訓練
       this.kihonsyaSkill()
     }
 
-    if (this.skill.bakusenn) {
+    if (this.skill.bakusenn) { //爆専
       this.bakusenSkill()
     }
 
-    if (this.skill.joukyu) {
+    if (this.skill.joukyu) { //上級射撃訓練
       this.joukyuSkill()
     }
 
-    if (this.skill.ifhe) {
+    if (this.skill.ifhe) { //IFHE
       this.IFHESkill()
     }
 
-    if (this.skill.raisokukoujou) {
+    if (this.skill.raisokukoujou) { //雷速向上
       this.raisokukoujouSkill()
     }
 
-    if (this.skill.gyoraisenmonka) {
+    if (this.skill.gyoraisenmonka) { //魚雷専門家
       this.gyoraisenmonkaSkill()
     }
 
-    if (this.skill.shiteitaiku) {
+    if (this.skill.shiteitaiku) { //指定対空
       this.shiteitaikuSkill()
     }
 
-    if (this.skill.koutan) {
+    if (this.skill.koutan) { //抗堪
       this.koutanSkill()
     }
 
-    if (this.skill.inpei) {
+    if (this.skill.inpei) { //隠蔽
       this.inpeiSkill()
     }
 
-    if (this.skill.meisai) {
-      this.meisaiSkill()
-    }
+    
 
 
 
@@ -196,6 +218,10 @@ export class SkillPage {
 
     if (this.skill.speedFlag) {
       this.speedFlagSkill()
+    }
+
+    if (this.skill.meisai) { //迷彩
+      this.meisaiSkill()
     }
 
     this.navCtrl.push(DetailPage, {
@@ -504,6 +530,39 @@ export class SkillPage {
     AH = parseFloat(this.ship.airHiding) * 0.97
     this.ship.seaHiding = Math.round(SH * 10) / 10
     this.ship.airHiding = Math.round(AH * 10) / 10
+  }
+
+
+  skillPointCalc1(flag){
+    if(flag == true){
+      this.skillPoint +=1;
+    }else{
+      this.skillPoint -= 1;
+    }
+  }
+
+  skillPointCalc2(flag){
+    if(flag == true){
+      this.skillPoint +=2;
+    }else{
+      this.skillPoint -= 2;
+    }
+  }
+
+  skillPointCalc3(flag){
+    if(flag == true){
+      this.skillPoint +=3;
+    }else{
+      this.skillPoint -= 3;
+    }
+  }
+
+  skillPointCalc4(flag){
+    if(flag == true){
+      this.skillPoint +=4;
+    }else{
+      this.skillPoint -= 4;
+    }
   }
 
 

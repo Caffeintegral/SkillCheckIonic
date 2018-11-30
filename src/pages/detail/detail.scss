@@ -19,21 +19,30 @@ page-detail {
     
     }
     h1{
-        font-size: 20px;
+        font-size: 6.5vw;
         color: #2196F3;
         
     }
 
     .name{
-        font-size: 15px;
+        font-size: 4.5vw;
+        color: #2196F3;
+    }
+    
+    .nameLong{
+        width: 60%;
+        display: inline-blick;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 4.5vw;
         color: #2196F3;
     }
     
     .value{
-        font-size: 20px;
-        width: 47%;
+        font-size: 6vw;
+        width: 46%;
         margin-top: -20px;
-        margin-left: 3%;
+        margin-left: 4%;
     }
 
 }
