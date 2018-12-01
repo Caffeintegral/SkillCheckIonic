@@ -1,14 +1,11 @@
 page-skill {
 .scroll-content{
         background-color: #FAFAFA;
-        // background-color: #555555;
     }
 
     .box1, .box2, .box3, .box4{
-        // border-radius: 20px 20px 20px 20px;
         background-color: #FFFFFF;
-        // display:flex;
-        // flex-wrap:wrap;
+
         margin-bottom: 20px;
 
         
@@ -37,20 +34,78 @@ page-skill {
         text-align: center;
     }
 
-    .skillLabel {
-        margin-top: 20px;
-        font-size: 6vw;
-        // color: #2196F3;
-        $item-ios-divider-color: #999;    
-    $item-ios-divider-background: #999; 
-    $item-md-divider-border-bottom: #999; 
+    .skillItem{  //skill箱
+        display:flex;
+        flex-wrap:wrap;
     }
 
-    .skillDetail{
-        font-size: 0.5vw;
-                $item-ios-divider-color: #999;    
-    $item-ios-divider-background: #999; 
-    $item-md-divider-border-bottom: #999; 
 
+    .textArea{
+        // margin-left: 2em;
+        width: 100%;
     }
+
+    .skillTitle{  //skill名
+
+        color: #2196F3;
+        margin-left: 12%;
+        font-size: 4.5vw;
+    }
+
+    .skillDetail{  //skill詳細
+        font-size: 2.5vw;
+        margin-left: 20%;
+        margin-top: -10px;
+        margin-bottom: -5px;
+    }
+
+
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+input[type="checkbox"] { 
+    display: none;
+    
+ }
+
+input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 14px/20px 'Open Sans', Arial, sans-serif;
+//   color: #ddd;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+
+input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+//   border: 1px solid #6cc0e5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .6;
+//   -webkit-transition: all .12s, border-color .08s;
+//   transition: all .12s, border-color .08s;
+}
+
+input[type="checkbox"]:checked + label:before {
+  width: 10px;
+  top: 30%;
+  left: 7%;
+  border-radius: 0;
+  opacity: 1;
+  border: 1px solid #6cc0e5;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 }

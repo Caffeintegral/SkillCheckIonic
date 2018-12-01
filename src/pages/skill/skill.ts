@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { DetailPage } from '../detail/detail';
 import { ShipData } from '../../providers/shipdata';
 
@@ -85,7 +85,7 @@ export class SkillPage {
     meisai: false
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public shipdata: ShipData) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public shipdata: ShipData, public alertCtrl: AlertController) {
     this.holdCountry = navParams.get("country")
     this.holdType = navParams.get("typeH")
     this.shipName = navParams.get("shipName")
@@ -138,7 +138,7 @@ export class SkillPage {
       this.inpeiSkill()
     }
 
-    
+
 
 
 
@@ -533,36 +533,55 @@ export class SkillPage {
   }
 
 
-  skillPointCalc1(flag){
-    if(flag == true){
-      this.skillPoint +=1;
-    }else{
+  skillPointCalc1(flag) {
+    if (flag == false) {
+      this.skillPoint += 1;
+      if (this.skillPoint > 19) {
+        this.dispAlert();
+      }
+    } else {
       this.skillPoint -= 1;
     }
   }
 
-  skillPointCalc2(flag){
-    if(flag == true){
-      this.skillPoint +=2;
-    }else{
+  skillPointCalc2(flag) {
+    if (flag == false) {
+      this.skillPoint += 2;
+      if (this.skillPoint > 19) {
+        this.dispAlert();
+      }
+    } else {
       this.skillPoint -= 2;
     }
   }
 
-  skillPointCalc3(flag){
-    if(flag == true){
-      this.skillPoint +=3;
-    }else{
+  skillPointCalc3(flag) {
+    if (flag == false) {
+      this.skillPoint += 3;
+      if (this.skillPoint > 19) {
+        this.dispAlert();
+      }
+    } else {
       this.skillPoint -= 3;
     }
   }
 
-  skillPointCalc4(flag){
-    if(flag == true){
-      this.skillPoint +=4;
-    }else{
+  skillPointCalc4(flag) {
+    if (flag == false) {
+      this.skillPoint += 4;
+      if (this.skillPoint > 19) {
+        this.dispAlert();
+      }
+    } else {
       this.skillPoint -= 4;
     }
+  }
+
+  dispAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'スキルポイントの上限は19です', buttons: ['閉じる']
+    });
+    alert.present();
   }
 
 
