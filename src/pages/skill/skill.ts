@@ -583,9 +583,4 @@ export class SkillPage {
     });
     alert.present();
   }
-
-
-
-
-
 }
