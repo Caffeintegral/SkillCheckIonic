@@ -161,7 +161,10 @@ export class HomePage {
         { text: 'Myoko', value: 'Myoko' },
         { text: 'Mogami', value: 'Mogami' },
         { text: 'Ibuki', value: 'Ibuki' },
-        { text: 'Zao', value: 'Zao' }
+        { text: 'Zao', value: 'Zao' },
+        { text: 'Katori', value: 'Katori' },
+        { text: 'Yubari', value: 'Yubari' },
+        { text: 'Atago', value: 'Atago' }
       ];
     }
 
@@ -175,7 +178,13 @@ export class HomePage {
         { text: 'Nagato', value: 'Nagato' },
         { text: 'Amagi', value: 'Amagi' },
         { text: 'Izumo', value: 'Izumo' },
-        { text: 'Yamato', value: 'Yamato' }
+        { text: 'Yamato', value: 'Yamato' },
+        { text: 'Mikasa', value: 'Mikasa' },
+        { text: 'Fuso', value: 'Fuso' },
+        { text: 'Ishizuchi', value: 'Ishizuchi' },
+        { text: 'Ashitaka', value: 'Ashitaka' },
+        { text: 'Kii', value: 'Kii' },
+        { text: 'Musashi', value: 'Musashi' }
       ];
     }
 
