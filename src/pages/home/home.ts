@@ -39,7 +39,7 @@ export class HomePage {
 
   dispAlert() {
     const alert = this.alertCtrl.create({
-      title: 'すべて選択したください', buttons: ['閉じる']
+      title: 'すべて選択してください', buttons: ['閉じる']
     });
     alert.present();
   }
@@ -55,8 +55,8 @@ export class HomePage {
       this.type = [
         { text: '駆逐艦', value: 'jpdd' },
         { text: '巡洋艦', value: 'jpca' },
-        { text: '戦艦', value: 'jpbb' },
-        { text: '航空母艦', value: 'jpcv' }
+        { text: '戦艦', value: 'jpbb' }
+        // ,{ text: '航空母艦', value: 'jpcv' }
       ];
     }
     if (val == 'us') {
@@ -64,8 +64,8 @@ export class HomePage {
       this.type = [
         { text: '駆逐艦', value: 'usdd' },
         { text: '巡洋艦', value: 'usca' },
-        { text: '戦艦', value: 'usbb' },
-        { text: '航空母艦', value: 'uscv' }
+        { text: '戦艦', value: 'usbb' }
+        // , { text: '航空母艦', value: 'uscv' }
       ];
     }
     if (val == 'km') {
@@ -73,8 +73,8 @@ export class HomePage {
       this.type = [
         { text: '駆逐艦', value: 'kmdd' },
         { text: '巡洋艦', value: 'kmca' },
-        { text: '戦艦', value: 'kmbb' },
-        { text: '航空母艦', value: 'kmcv' }
+        { text: '戦艦', value: 'kmbb' }
+        // ,{ text: '航空母艦', value: 'kmcv' }
       ];
     } if (val == 'ru') {
       console.log("ru")
@@ -89,8 +89,7 @@ export class HomePage {
       this.type = [
         { text: '駆逐艦', value: 'ukdd' },
         { text: '巡洋艦', value: 'ukca' },
-        { text: '戦艦', value: 'ukbb' },
-        { text: '航空母艦', value: 'ukcv' }
+        { text: '戦艦', value: 'ukbb' }
       ];
     }
     if (val == 'fr') {
@@ -119,6 +118,7 @@ export class HomePage {
       this.type = [
         { text: '駆逐艦', value: 'etdd' },
         { text: '巡洋艦', value: 'etca' },
+        { text: '戦艦', value: 'etbb' }
       ];
     }
   }
@@ -212,7 +212,12 @@ export class HomePage {
         { text: 'Mahan', value: 'Mahan' },
         { text: 'Benson', value: 'Benson' },
         { text: 'Fletcher', value: 'Fletcher' },
-        { text: 'Gearing', value: 'Gearing' }
+        { text: 'Gearing', value: 'Gearing' },
+        { text: 'Smith', value: 'Smith' },
+        { text: 'Monaghan', value: 'Monaghan' },
+        { text: 'Sims', value: 'Sims' },
+        { text: 'Kidd', value: 'Kidd' },
+        { text: 'Black', value: 'Black' }
       ];
     }
 
@@ -233,7 +238,13 @@ export class HomePage {
         { text: 'Helena', value: 'Helena' },
         { text: 'Cleveland', value: 'Cleveland' },
         { text: 'Seattle', value: 'Seattle' },
-        { text: 'Worcester', value: 'Worcester' }
+        { text: 'Worcester', value: 'Worcester' },
+        { text: 'Albany', value: 'Albany' },
+        { text: 'Marblehead', value: 'Marblehead' },
+        { text: 'Atlanta', value: 'Atlanta' },
+        { text: 'Indianapolis', value: 'Indianapolis' },
+        { text: 'Frint', value: 'Frint' },
+        { text: 'Salem', value: 'Salem' }
       ];
     }
 
@@ -247,7 +258,13 @@ export class HomePage {
         { text: 'Colorado', value: 'Colorado' },
         { text: 'North Carolina', value: 'North Carolina' },
         { text: 'Iowa', value: 'Iowa' },
-        { text: 'Montana', value: 'Montana' }
+        { text: 'Montana', value: 'Montana' },
+        { text: 'Arkansas beta', value: 'Arkansas beta' },
+        { text: 'Texas', value: 'Texas' },
+        { text: 'Arizona', value: 'Arizona' },
+        { text: 'Alabama', value: 'Alabama' },
+        { text: 'Massachusetts', value: 'Massachusetts' },
+        { text: 'Missouri', value: 'Missouri' }
       ];
     }
 
@@ -275,7 +292,9 @@ export class HomePage {
         { text: 'Leberecht Maass', value: 'Leberecht Maass' },
         { text: 'Z-23', value: 'Z-23' },
         { text: 'Z-46', value: 'Z-46' },
-        { text: 'Z-52', value: 'Z-52' }
+        { text: 'Z-52', value: 'Z-52' },
+        { text: 'T-61', value: 'T-61' },
+        { text: 'Z-39', value: 'Z-39' }
       ];
     }
 
@@ -291,7 +310,10 @@ export class HomePage {
         { text: 'Yorck', value: 'Yorck' },
         { text: 'Admiral Hipper', value: 'Admiral Hipper' },
         { text: 'Roon', value: 'Roon' },
-        { text: 'Hindenburg', value: 'Hindenburg' }
+        { text: 'Hindenburg', value: 'Hindenburg' },
+        { text: 'Emden', value: 'Emden' },
+        { text: 'Admiral Graf Spee', value: 'Admiral Graf Spee' },
+        { text: 'Prinz Eugen', value: 'Prinz Eugen' }
       ];
     }
 
@@ -305,7 +327,10 @@ export class HomePage {
         { text: 'Gneisenau', value: 'Gneisenau' },
         { text: 'Bismarck', value: 'Bismarck' },
         { text: 'Friedrich Der Große', value: 'Friedrich Der Große' },
-        { text: 'Großer Kurfürst', value: 'Großer Kurfürst' }
+        { text: 'Großer Kurfürst', value: 'Großer Kurfürst' },
+        { text: 'König Albert', value: 'König Albert' },
+        { text: 'Scharnhorst', value: 'Scharnhorst' },
+        { text: 'Tirpitz', value: 'Tirpitz' }
       ];
     }
 
@@ -327,7 +352,206 @@ export class HomePage {
         { text: 'Minsk', value: 'Minsk' },
         { text: 'Kiev', value: 'Kiev' },
         { text: 'Tashkent', value: 'Tashkent' },
-        { text: 'Khabarovsk', value: 'Khabarovsk' }
+        { text: 'Khabarovsk', value: 'Khabarovsk' },
+        { text: 'Ognevoi', value: 'Ognevoi' },
+        { text: 'Udaloi', value: 'Udaloi' },
+        { text: 'Grozovoi', value: 'Grozovoi' },
+        { text: 'Gremyashchy', value: 'Gremyashchy' },
+        { text: 'Okhotnik', value: 'Okhotnik' },
+        { text: 'Leningrad', value: 'Leningrad' }
+      ];
+    }
+
+    if (val == 'ruca') {
+      console.log(val)
+      this.ship = [
+        { text: 'Orlan', value: 'Orlan' },
+        { text: 'Novik', value: 'Novik' },
+        { text: 'Bogatyr', value: 'Bogatyr' },
+        { text: 'Svietlana', value: 'Svietlana' },
+        { text: 'Kirov', value: 'Kirov' },
+        { text: 'Budyonny', value: 'Budyonny' },
+        { text: 'Shchors', value: 'Shchors' },
+        { text: 'Chapayev', value: 'Chapayev' },
+        { text: 'Dmitri Donskoi', value: 'Dmitri Donskoi' },
+        { text: 'Moskva', value: 'Moskva' },
+        { text: 'Diana', value: 'Diana' },
+        { text: 'Oleg', value: 'Oleg' },
+        { text: 'Varyag', value: 'Varyag' },
+        { text: 'Aurora', value: 'Aurora' },
+        { text: 'Murmansk', value: 'Murmansk' },
+        { text: 'Krasny Krym', value: 'Krasny Krym' },
+        { text: 'Molotov', value: 'Molotov' },
+        { text: 'Admiral Makarov', value: 'Admiral Makarov' },
+        { text: 'Mikhail Kutuzov', value: 'Mikhail Kutuzov' },
+        { text: 'Stalingrad', value: 'Stalingrad' }
+      ];
+    }
+
+    if (val == 'rubb') {
+      console.log(val)
+      this.ship = [
+        { text: 'Imperator Nikolai I', value: 'Imperator Nikolai I' },
+        { text: 'Oktyabrskaya Revolutsiya', value: 'Oktyabrskaya Revolutsiya' }
+      ];
+    }
+
+    if (val == 'ukdd') {
+      console.log(val)
+      this.ship = [
+        { text: 'Medea', value: 'Medea' },
+        { text: 'Valkyrie', value: 'Valkyrie' },
+        { text: 'Wakeful', value: 'Wakeful' },
+        { text: 'Acasta', value: 'Acasta' },
+        { text: 'Icarus', value: 'Icarus' },
+        { text: 'Jervis', value: 'Jervis' },
+        { text: 'Lightning', value: 'Lightning' },
+        { text: 'Jutland', value: 'Jutland' },
+        { text: 'Daring', value: 'Daring' },
+        { text: 'Campbeltown', value: 'Campbeltown' },
+        { text: 'Gallant', value: 'Gallant' },
+        { text: 'Cossack', value: 'Cossack' }
+      ];
+    }
+
+    if (val == 'ukca') {
+      console.log(val)
+      this.ship = [
+        { text: 'Black Swan', value: 'Black Swan' },
+        { text: 'Weymouth', value: 'Weymouth' },
+        { text: 'Caledon', value: 'Caledon' },
+        { text: 'Danae', value: 'Danae' },
+        { text: 'Emerald', value: 'Emerald' },
+        { text: 'Leander', value: 'Leander' },
+        { text: 'Fiji', value: 'Fiji' },
+        { text: 'Edinburgh', value: 'Edinburgh' },
+        { text: 'Neptune', value: 'Neptune' },
+        { text: 'Minotaur', value: 'Minotaur' },
+        { text: 'Belfast', value: 'Belfast' }
+      ];
+    }
+
+    if (val == 'ukbb') {
+      console.log(val)
+      this.ship = [
+        { text: 'Bellerophon', value: 'Bellerophon' },
+        { text: 'Orion', value: 'Orion' },
+        { text: 'Iron Duke', value: 'Iron Duke' },
+        { text: 'Queen Elizabeth', value: 'Queen Elizabeth' },
+        { text: 'King George V', value: 'King George V' },
+        { text: 'Monarch', value: 'Monarch' },
+        { text: 'Lion', value: 'Lion' },
+        { text: 'Conqueror', value: 'Conqueror' },
+        { text: 'Dreadnought', value: 'Dreadnought' },
+        { text: 'Warspite', value: 'Warspite' },
+        { text: 'Hood', value: 'Hood' },
+        { text: 'Duke of York', value: 'Duke of York' },
+        { text: 'Nelson', value: 'Nelson' },
+        { text: 'Vanguard', value: 'Vanguard' }
+      ];
+    }
+
+    if (val == 'frdd') {
+      console.log(val)
+      this.ship = [
+        { text: 'Aigle', value: 'Aigle' },
+        { text: 'Le Terrible', value: 'Le Terrible' }
+      ];
+    }
+
+    if (val == 'frca') {
+      console.log(val)
+      this.ship = [
+        { text: 'Bougainville', value: 'Bougainville' },
+        { text: 'Jurien de la Gravière', value: 'Jurien de la Gravière' },
+        { text: 'Friant', value: 'Friant' },
+        { text: 'Duguay-Trouin', value: 'Duguay-Trouin' },
+        { text: 'Émile Bertin', value: 'Émile Bertin' },
+        { text: 'La Galissonnière', value: 'La Galissonnière' },
+        { text: 'Algérie', value: 'Algérie' },
+        { text: 'Charles Martel', value: 'Charles Martel' },
+        { text: 'Saint-Louis', value: 'Saint-Louis' },
+        { text: 'Henri IV', value: 'Henri IV' },
+        { text: 'De Grasse', value: 'De Grasse' }
+      ];
+    }
+
+    if (val == 'frbb') {
+      console.log(val)
+      this.ship = [
+        { text: 'Turenne', value: 'Turenne' },
+        { text: 'Courbet', value: 'Courbet' },
+        { text: 'Bretagne', value: 'Bretagne' },
+        { text: 'Normandie', value: 'Normandie' },
+        { text: 'Lyon', value: 'Lyon' },
+        { text: 'Richelieu', value: 'Richelieu' },
+        { text: 'Alsace', value: 'Alsace' },
+        { text: 'République', value: 'République' },
+        { text: 'Dunkerque', value: 'Dunkerque' },
+        { text: 'Gascogne', value: 'Gascogne' },
+        { text: 'Jean Bart', value: 'Jean Bart' },
+        { text: 'Bourgogne', value: 'Bourgogne' }
+      ];
+    }
+
+    if (val == 'padd') {
+      console.log(val)
+      this.ship = [
+        { text: 'Long Jiang', value: 'Long Jiang' },
+        { text: 'Phra Ruang', value: 'Phra Ruang' },
+        { text: 'Shen Yang', value: 'Shen Yang' },
+        { text: 'Jian Wei', value: 'Jian Wei' },
+        { text: 'Fu Shun', value: 'Fu Shun' },
+        { text: 'Gadjah Madah', value: 'Gadjah Madah' },
+        { text: 'Hsien Yang', value: 'Hsien Yang' },
+        { text: 'Chung Mu', value: 'Chung Mu' },
+        { text: 'Yueyang', value: 'Yueyang' },
+        { text: 'Anshan', value: 'Anshan' },
+        { text: 'Lo Yang', value: 'Lo Yang' }
+      ];
+    }
+
+    if (val == 'paca') {
+      console.log(val)
+      this.ship = [
+        { text: 'Cheng An', value: 'Cheng An' },
+        { text: 'Huang He', value: 'Huang He' },
+        { text: 'Irian', value: 'Irian' }
+      ];
+    }
+
+    if (val == 'podd') {
+      console.log(val)
+      this.ship = [
+        { text: 'Błyskawica', value: 'Błyskawica' }
+      ];
+    }
+
+    if (val == 'etdd') {
+      console.log(val)
+      this.ship = [
+        { text: 'Vampire', value: 'Vampire' },
+        { text: 'Haida', value: 'Haida' }
+      ];
+    }
+
+    if (val == 'etca') {
+      console.log(val)
+      this.ship = [
+        {
+          text: 'Duca d\'Aosta', value: 'Duca d\'Aosta'
+        },
+        { text: 'Duca degli Abruzzi', value: 'Duca degli Abruzzi' },
+        { text: 'Nueve de Julio', value: 'Nueve de Julio' },
+        { text: 'Perth', value: 'Perth' }
+      ];
+    }
+
+    if (val == 'etbb') {
+      console.log(val)
+      this.ship = [
+        { text: 'Giulio Cesare', value: 'Giulio Cesare' },
+        { text: 'Roma', value: 'Roma' }
       ];
     }
 

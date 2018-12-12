@@ -1,12 +1,13 @@
 page-skill {
 .scroll-content{
-        background-color: #FAFAFA;
+        // background-color: #FAFAFA;
     }
 
     .box1, .box2, .box3, .box4{
         background-color: #FFFFFF;
-
+        box-shadow: 0 0 3px gray;
         margin-bottom: 20px;
+        border-radius: 3px 3px 3px 3px;
 
         
     }

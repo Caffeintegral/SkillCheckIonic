@@ -1,14 +1,15 @@
 page-detail {
     .scroll-content{
-        background-color: #FAFAFA;
+        // background-color: #FAFAFA;
     }
 
     .box1, .box2, .box3, .box4{
-        border-radius: 20px 20px 20px 20px;
+        border-radius: 3px 3px 3px 3px;
         background-color: #FFFFFF;
         display:flex;
         flex-wrap:wrap;
         margin-bottom: 20px;
+        box-shadow: 0 0 3px gray;
     }
 
     .name, .value{
