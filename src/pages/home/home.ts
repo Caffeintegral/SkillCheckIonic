@@ -180,7 +180,6 @@ export class HomePage {
         { text: 'Izumo', value: 'Izumo' },
         { text: 'Yamato', value: 'Yamato' },
         { text: 'Mikasa', value: 'Mikasa' },
-        { text: 'Fuso', value: 'Fuso' },
         { text: 'Ishizuchi', value: 'Ishizuchi' },
         { text: 'Ashitaka', value: 'Ashitaka' },
         { text: 'Kii', value: 'Kii' },
